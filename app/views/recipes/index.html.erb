@@ -1,0 +1,14 @@
+<h1>Recipe Search</h1>
+
+<%= form_tag recipes_path, :method => 'get' do %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<br>
+<% if @recipe_get %>	
+<% @recipe_get.each do |r| %>
+
+	<%= image_tag(r['images'][0]['hostedLargeUrl']) %>
+	<%= link_to 'recipe', r['source']['sourceRecipeUrl'] %>
+<% end %>
+<% end %> 
