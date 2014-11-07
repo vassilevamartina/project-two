@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
-resources :recipes
 
-root 'recipes#index'
+    resource :sessions, only: [:create, :new, :destroy]
+  # get 'sessions/new' => 'sessions#new',  as: :new_sessions
+
+  # post 'sessions/' => 'sessions#create', as: :sessions
+
+
+  # get 'sessions/destroy' => 'sessions#destroy', as: :delete_sessions
+
+  resources :users, except: [:destroy]
+
+  resources :recipes
+
+  root 'recipes#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
