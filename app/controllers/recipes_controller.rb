@@ -7,8 +7,9 @@ class RecipesController < ApplicationController
 		if params[:query] 
     	query = URI.escape(params[:query])
 
-my_api_key = ENV["YM_API_KEY"]
-my_api_secret = ENV["YM_API_SECRET"]
+		my_api_key = ENV["YM_API_KEY"]
+		my_api_secret = ENV["YM_API_SECRET"]
+
 		# raise params[:recipe].to_s
 		recipe_search_uri = "http://api.yummly.com/v1/api/recipes?_app_id="+my_api_key+"&_app_key="+my_api_secret+"&q="+ query + "&requirePictures=true"
 		response = HTTParty.get(recipe_search_uri).to_json	

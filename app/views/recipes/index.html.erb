@@ -7,8 +7,11 @@
 <br>
 <% if @recipe_get %>	
 <% @recipe_get.each do |r| %>
+    Recipe Name: <%= r['attribution']['text'] %> 
 
-	<%= image_tag(r['images'][0]['hostedLargeUrl']) %>
-	<%= link_to 'recipe', r['source']['sourceRecipeUrl'] %>
+
+
+   	<%= link_to image_tag(r['images'][0]['hostedLargeUrl']), r['source']['sourceRecipeUrl'] %>
+
 <% end %>
 <% end %> 
