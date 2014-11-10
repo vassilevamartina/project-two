@@ -2,4 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container{
+	box-shadow: 0px 5px 5px #888888;
+}
 
+.recipes{
+	background-color: #E8E8E8;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	box-shadow: 0px 2px 2px #888888;
+	list-style-type: none;
+	margin: 0;
+	padding: 0px 50px 0px 0px;
+	height: 275px;
+	line-height: 275px;
+}
+
+.image_style{
+	float: right;
+}

@@ -44,7 +44,7 @@ def update
 def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'User was successfully logged out.' }
       format.json { head :no_content }
     end
   end

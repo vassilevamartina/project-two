@@ -2,16 +2,20 @@
 
 <%= form_tag recipes_path, :method => 'get' do %>
     <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Grubify", :name => nil %>
 <% end %>
 <br>
 <% if @recipe_get %>	
 <% @recipe_get.each do |r| %>
-    Recipe Name: <%= r['attribution']['text'] %> 
+<ul>
 
-
-
-   	<%= link_to image_tag(r['images'][0]['hostedLargeUrl']), r['source']['sourceRecipeUrl'] %>
+ <li class="recipes"><strong> <%= r['attribution']['text'] %> <strong>
+   	<%= link_to image_tag(r['images'][0]['hostedLargeUrl']), r['source']['sourceRecipeUrl'], :class => "image_style" %> </li><br><br>
+</ul>
+	 
 
 <% end %>
 <% end %> 
+
+
+ 
