@@ -1,7 +1,7 @@
 <h1>Recipe Search</h1>
 
 <%= form_tag recipes_path, :method => 'get' do %>
-    <%= text_field_tag :query, params[:query] %>
+<%= text_field_tag :query, params[:query] %>
     <%= submit_tag "Grubify", :name => nil %>
 <% end %>
 <br>
@@ -18,4 +18,3 @@
 <% end %> 
 
 
- 

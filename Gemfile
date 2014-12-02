@@ -12,6 +12,8 @@ gem 'rails_12factor'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'travis-lint'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use SCSS for stylesheets
