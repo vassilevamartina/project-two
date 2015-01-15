@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_filter :authorize
+  
   def new
   	@user = User.new
   	@is_login = true

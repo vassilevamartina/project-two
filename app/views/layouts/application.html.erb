@@ -10,29 +10,32 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
-<body style="background-color: #d3d3d3;">
-<div class="container">
+<body class="bodyBG">
 
- <ul class="nav nav-pills" role="tablist">
- 
-    <li role="presentation" class="active"><%=link_to "Grubify",root_path %> </li>
-    <li role="presentation"><%=link_to "Sign Up", new_user_path %> </li> 
-    <li role="presentation"><%=link_to "Log In", new_sessions_path %> </li>
-    <li role="presentation"><%=link_to "Log Out", sessions_path, method: :delete %> </li> 
- </ul>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
+      
+          <% if current_user %>
+          <li class="icon-bar"><%=link_to "Grubify",root_path %></li>
+          <li class="icon-bar"><%=link_to "Log Out", sessions_path, method: :delete %></li>
 
+          <% else %>
 
-<% if current_user %>
-	You're logged in as <%= current_user.email %>
+          <li class="icon-bar"><%=link_to "Sign Up", new_user_path %></li>
+          <li class="icon-bar"><%=link_to "Log In", new_sessions_path %></li>
 
-<%else%>
-	<% button_to "Login", new_sessions_path, method: :get %>
-  <% button_to "Sign Up", new_user_path, method: :get %>
+          <% end %> 
 
-<%end%> 
+        
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<div class="span9"><%= yield %></div>
-</div>
+<%= yield %>
+
 
 </body>
 </html>
